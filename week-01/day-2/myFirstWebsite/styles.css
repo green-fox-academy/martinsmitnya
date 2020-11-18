@@ -1,0 +1,49 @@
+body {
+    margin:0;
+    background-image: url(./assets/background.png);
+}
+
+header {
+    padding: 8px 10%;
+    background-color: #333333;
+}
+
+
+header ul {
+    list-style-type: none;
+    float: right;
+}
+
+header ul li {
+    display: inline;
+    margin: 10px;
+}
+
+header ul li a {
+    color: #ff0099;
+}
+
+
+
+
+
+MAIN {
+    padding: 0 10%; 
+    font-family: 'Courier New', Courier, monospace;
+}
+
+main h1 {
+    font-family: 'Permanent Marker', cursive;
+}
+
+.role {
+    color: #ff0099;
+}
+
+.separator {
+    text-align: center;
+}
+
+.TechnologyWiki {
+    text-align: center;
+}
