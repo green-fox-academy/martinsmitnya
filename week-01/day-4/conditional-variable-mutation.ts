@@ -47,11 +47,22 @@ let isBonus: boolean = false;
 
 // if credits are at least 50,
 // and is_bonus is false decrement c by 2
+
 // if credits are smaller than 50,
 // and is_bonus is false decrement c by 1
+
 // if is_bonus is true c should remain the same
+if (credits >= 50 && isBonus===false) {
+  c-=2
+}else if (credits < 50 && isBonus===false) {
+  c--;
+}
 
 console.log(c);
+
+
+
+
 
 let d: number =  8;
 let time: number = 120;
