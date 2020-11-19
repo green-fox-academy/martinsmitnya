@@ -3,10 +3,11 @@
 let massInKg: number = 81.2;
 let heightInM: number = 1.78;
 
-// Print the Body mass index (BMI) based on these values
 
 //BMI Formula: Weight / Height^2
-BMI = massInKg / heightInM** ;
+let BMI: number = massInKg / (heightInM * heightInM);
 
-console.log(heightInM)
-console.log (BMI));
+
+
+// Print the Body mass index (BMI) based on these values
+console.log(BMI);
