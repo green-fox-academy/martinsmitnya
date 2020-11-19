@@ -4,4 +4,4 @@
 console.log('Hello, World!');
 
 let myName: string = 'Martin Smitnya';
-console.log('Hello,' myName);
+console.log('Hello,', myName);
