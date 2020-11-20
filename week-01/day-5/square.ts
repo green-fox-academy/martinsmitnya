@@ -8,7 +8,7 @@
 // %%%%%%
 //
 // The square should have as many lines as lineCount is
-let lineCount: number = 6;
+let lineCount: number = 10;
 let answer: string = '';   
 
 //TOP   
