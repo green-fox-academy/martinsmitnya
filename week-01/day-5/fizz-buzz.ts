@@ -24,14 +24,13 @@ for (let i: number = 1; i<=100; i++) {
 
 for (let i: number = 1; i<=100; i++) {
   let answer: any = '';
-  //if (i % 3===0 && i % 5 ===0) {
-  //  console.log('FizzBuzz');}
   if (i % 3 ===0) {
-    answer = answer+ 'Fizz';
-  }else if (i % 5 ===0) {
-    answer = answer+ 'Buzz';
-  }else {
-    answer = answer+ i;
+    answer = answer+ 'Fizz';    //Dividable by 3?
+  }
+  if (i % 5 ===0) {
+    answer = answer+ 'Buzz';    //Dividable by 5?
+  }else if (i % 3 > 0){     
+    answer = answer+ i;         //Not %5 AND Not %3?
   }
   console.log(answer);
 }
