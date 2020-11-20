@@ -17,8 +17,8 @@
 
 
 // Determine linecount and halfpoint in the middle
-let lineCount = 6;
-let halfpoint = 0;
+let lineCount: number = 6;
+let halfpoint: number = 0;
 if (lineCount % 2 === 0) {
   halfpoint = lineCount / 2
 } else { halfpoint = lineCount / 2 + 0.5 }
@@ -26,11 +26,11 @@ if (lineCount % 2 === 0) {
 console.log('linecount: ' + lineCount)
 console.log('halfpoint: ' + halfpoint);
 
-let i = 0;    //i iterator outside of loops!
+let i: number = 0;    //i iterator outside of loops!
 
 //First loop draws till half point
 while (i < halfpoint- lineCount%2) {
-  let answer = ''
+  let answer: string = ''
 
   for (let j = 0; j < (lineCount + 1) - i; j++) {   // print currentLine/2 times " " characters
     answer = answer + j;
