@@ -12,6 +12,8 @@ function myFunction (i, x) {            //This fucntion converts arr[i] to value
 myFunction(3, 4);   //call the function
 console.log(numbers[3]);
 
+numbers.map (myFunction(3, 98));    // .map solution dynamic
+console.log(numbers[3]);
 
-numbers.map (function converter() {numbers[3]=99; return numbers}) 
+numbers.map (function converter() {numbers[3]=99; return numbers})    // .map solution
 console.log(numbers[3]);
