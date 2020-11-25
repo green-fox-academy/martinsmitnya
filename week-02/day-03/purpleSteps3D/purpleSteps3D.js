@@ -17,18 +17,17 @@ function drawFillRect (space, size, colour){
   ctx.fillRect(space, space, size, size);
 }
 
-// forloop for the stairs
-// THE only thing mission is THE SPACE between the Squares, wich is equal to: 
-//0*50.. (i-1)*50.. (i-1)*50 + (i-2)*50.. (i-1)*50 + (i-2)*50 + (i-3)*50...(i-1)*50 + (i-2)*50 + (i-3)*50 + (i-4)*50
-
-for (let i = 1; i < 5; i++){
-  // A RECURSION FUCNTION IS NEEDED THAT does x-1 -1 -1 ...
-  let spaceFromPrevious =  + (i-1*50)   -50;      //SPACE BETWEEN SQUARES
-  
-
-
-  let size = i*50;                   //Square Size
+for (let i = 1; i < 20; i++){
+  let size= 5;
+  let relativeSize = i*size;                   //Square Size
+  // Sapce between squares
+  let sapce = 0;
+  for (let j =0; j < i; j++)
+  {
+    sapce += j*size;
+  }
   //draw with differenc color
-  let color = `rgb(${i*50}, ${i*30}, ${i*70})`
-  drawFillRect(spaceFromPrevious, size, color);
+  let color = `rgb(${i*50}, ${i*10}, ${i*30})`
+
+  drawFillRect(sapce, relativeSize, color);
 }
