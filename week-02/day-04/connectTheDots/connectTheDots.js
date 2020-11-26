@@ -30,6 +30,61 @@ function drawAll (array) {
   //FIRST SET BEGINNG POINT HERE
   let fromX = array[0] [0];
   let fromY = array[0] [1];
+  console.log ('Begginer X: ' + fromX + 'Y: ' + fromY);
+  
+  for (let k=0; k < array.length; k++) {     //Go to the Nested Array
+    let arrayToConvert = array[k];
+    // I reset toX, toY.
+    let toX =0;
+    let toY =0;
+    for (let i = 0; i < arrayToConvert.length; i++) {     //Take each number one by one from the inner array.
+      if (i ===0) {
+        toX = arrayToConvert[i];
+      } else {
+        toY = arrayToConvert[i];
+      }
+    }//I have toX and toY HERE 
+    console.log('toX: '+  toX + ' toY: '+ toY)
+    drawLine (fromX, fromY, toX, toY);
+    //I set the NEW fromX and fromY
+    fromX = toX;
+    fromY = toY;
+
+    console.log('AFTER SETTING fromX: ' + fromX + ' fromY: ' + fromY);
+  } //Afther it finished drawing 4 leines it should draw teh last one to the beginer point drawLine (fromX, fromY, toX, toY);;
+}
+
+drawAll([[10, 10], [290,  10], [290, 290], [10, 290]]);
+
+
+
+
+
+
+
+
+
+/*
+function arrayToCoordinates (arrayToConvert) {
+  for (let i = 0; i < arrayToConvert.length; i++) {
+  let toX =0;
+  let toY =0;
+  if (i ===0) {
+    toX = arrayToConvert[i];
+  } else {
+     toY = arrayToConvert[i];
+  }
+  console.log(toX, toY);
+}
+*/
+
+
+/*SAVE I just have to make a for loop go +1
+
+function drawAll (array) {
+  //FIRST SET BEGINNG POINT HERE
+  let fromX = array[0] [0];
+  let fromY = array[0] [1];
   console.log ('Begginer X: ' + fromX + 'Y: ' + fromY );
   array.forEach(function (arrayToConvert) {     //Go to the Nested Array
 
@@ -56,18 +111,4 @@ function drawAll (array) {
 drawAll([[10, 10], [290,  10], [290, 290], [10, 290]]);
 
 
-
-
-/*
-function arrayToCoordinates (arrayToConvert) {
-  for (let i = 0; i < arrayToConvert.length; i++) {
-  let toX =0;
-  let toY =0;
-  if (i ===0) {
-    toX = arrayToConvert[i];
-  } else {
-     toY = arrayToConvert[i];
-  }
-  console.log(toX, toY);
-}
-*/
+SAVE */
