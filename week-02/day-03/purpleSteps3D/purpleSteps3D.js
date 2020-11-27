@@ -17,7 +17,7 @@ function drawFillRect (space, size, colour){
   ctx.fillRect(space, space, size, size);
 }
 
-for (let i = 1; i < 20; i++){
+for (let i = 1; i < 9; i++){
   let size= 5;
   let relativeSize = i*size;                   //Square Size
   // Sapce between squares
