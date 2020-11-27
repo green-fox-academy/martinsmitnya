@@ -49,8 +49,9 @@ function drawDots (array) {
     fromY = toY;
 
     //DEBUG console.log('SETTING fromX: ' + fromX + ' fromY: ' + fromY);
-    
+
   })
 }
 
 drawDots([[50, 100], [70, 70], [80, 90], [90, 90], [100, 70], [120, 100], [85, 130], [50, 100]]);
+drawDots([[10, 10], [290,  10], [290, 290], [10, 290]]);
