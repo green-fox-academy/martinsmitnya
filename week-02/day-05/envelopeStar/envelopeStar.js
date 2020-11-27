@@ -14,36 +14,41 @@ function drawLine(fromX, fromY, toX, toY) {
   ctx.stroke();
 }
 
-//DONE
+//From 0--- To III200
 function botomLeftNet (spaceBetweenLines) {
   for (let i =1; i<=200/spaceBetweenLines; i++) {
-    drawLine(i*spaceBetweenLines, 200, 200, i*spaceBetweenLines +200);
+    drawLine(i*spaceBetweenLines, 200, 200,  i*spaceBetweenLines +200);
   }
 
 }
-//DONE
+//From   ---400      200III
 function botomRightNet (spaceBetweenLines) {
   for (let i =1; i<=200/spaceBetweenLines; i++) {
     drawLine(400-i*spaceBetweenLines, 200, 200, i*spaceBetweenLines +200);
   }
 
 }
-//DONE
+//From 0---   To III200
 function topLeftNet (spaceBetweenLines) {
   for (let i =1; i<=200/spaceBetweenLines; i++) {
     drawLine(i*spaceBetweenLines, 200, 200, 200- i*spaceBetweenLines);
   }
 
 }
-//DONE
+//From   ---400    To III200
 function topRightNet (spaceBetweenLines) {
   for (let i =1; i<=200/spaceBetweenLines; i++) {
-    drawLine(400-i*spaceBetweenLines, 200,       200, 200- i*spaceBetweenLines);
+    drawLine(400-i*spaceBetweenLines, 200, 200, 200- i*spaceBetweenLines);
   }
 
 }
 
-botomLeftNet (20);
-botomRightNet (20);
-topLeftNet(20);
-topRightNet (20);
+
+function drawStar (spaceBetweenLines) {
+  botomLeftNet (spaceBetweenLines);
+  botomRightNet (spaceBetweenLines);
+  topLeftNet(spaceBetweenLines);
+  topRightNet (spaceBetweenLines);
+}
+
+drawStar(20);
