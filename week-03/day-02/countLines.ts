@@ -10,9 +10,10 @@ const fs = require('fs');
 function countLines(filename:string):number {
   let lines: number = 0;
   try {
-    let fileContents = fs.readFileSync(filename, 'utf-8').toString(); //Split the document into one strin in an array
+    fs.readFileSync(filename, 'utf-8')//try.catch
   }
   catch(e){console.log(e);}
+  let fileContents = fs.readFileSync(filename, 'utf-8').toString(); //Split the document into one strin in an array
   for (let i:number = 0; i < fileContents.length; i++) {       //go each element of the array[0] string
     if (fileContents[i] === '\n') {
       lines++
@@ -23,21 +24,4 @@ function countLines(filename:string):number {
 }
 
 
-console.log('THIS WORKS: ' + countLines('multpleLine.txt') );
-
-
-
-
-/*
-function countLines(filename:string):number {
-  let lines: number = 0;
-  let fileContents = fs.readFileSync(filename, 'utf-8').toString().split(); //Split the document into one strin in an array
-  for (let i:number = 0; i < fileContents[0].length; i++) {       //go each element of the array[0] string
-    if (fileContents [0][i] === '\n') {
-      lines++
-    }
-  }
-  
-  return lines
-}
-*/
+console.log('Number of Lines IS: ' + countLines('multpleLine.txt') );
