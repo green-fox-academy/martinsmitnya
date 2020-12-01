@@ -15,7 +15,6 @@ function decrypter (from:string) {
       temporaryContent +=bufferContent[i];
     }
   }
-  console.log('Temporaray content is: ' + temporaryContent);
 
   try{
     fs.writeFileSync(from, temporaryContent);
