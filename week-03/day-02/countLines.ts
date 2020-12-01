@@ -9,7 +9,10 @@ const fs = require('fs');
 
 function countLines(filename:string):number {
   let lines: number = 0;
-  let fileContents = fs.readFileSync(filename, 'utf-8').toString(); //Split the document into one strin in an array
+  try {
+    let fileContents = fs.readFileSync(filename, 'utf-8').toString(); //Split the document into one strin in an array
+  }
+  catch(e){console.log(e);}
   for (let i:number = 0; i < fileContents.length; i++) {       //go each element of the array[0] string
     if (fileContents[i] === '\n') {
       lines++
