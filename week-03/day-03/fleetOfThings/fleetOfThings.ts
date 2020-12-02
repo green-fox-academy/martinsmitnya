@@ -16,23 +16,27 @@ let fleet = new Fleet();
 
 function writeTheList(item:string, done:boolean) {
   if (done = true) {
-    fleet.add(new Thing(item));
+    let buffer = new Thing(item);
+    buffer.complete();
+    fleet.add(buffer);
   }else {
     fleet.add(new Thing(item));
   }
 }
 
+
+
 let milk: Thing= new Thing('Get milk');
 let obstacles:Thing = new Thing('Remove the obstacles');
-let stand:Thing = new Thing('Stand up');
+/*let stand:Thing = new Thing('Stand up');*/
 let lunch:Thing = new Thing('Eat lunch');
 
-stand.complete();
+/*stand.complete();*/
 lunch.complete();
 
 fleet.add(milk);
 fleet.add(obstacles);
-fleet.add(stand);
+/*fleet.add(stand); */ writeTheList('Stand up', true);
 fleet.add(lunch);
 
 
