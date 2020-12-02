@@ -16,7 +16,7 @@ let wildPokemon: Pokemon = new Pokemon('Oddish', 'leaf', 'water');
 function chooseEffective (myPokemon, enemyPokemon: Pokemon) {
   for (let i = 0; i<myPokemon.length; i++){            //In a for loop I go through all available pokemons
     if (enemyPokemon.type === myPokemon[i].effectiveAgainst) {    
-      return pokemonOfAsh[i].name;  //If the myPoekmin[i].effectiveAgainst is what the enemy.type is I choose it
+      return myPokemon[i].name;  //If the myPoekmin[i].effectiveAgainst is what the enemy.type is I choose it
     }
 
   }
