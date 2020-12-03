@@ -64,26 +64,19 @@ console.log(diceSet.getCurrent());
 
 let diceSet = new DiceSet();
 diceSet.roll()
-console.log(diceSet.getCurrent());
+console.log('START: ' + diceSet.getCurrent());
 
 
-let i:number = 1000;
-
-
-while (true) {
+while (/*diceSet.getCurrent() !== [6, 6, 6, 6, 6, 6] */diceSet.getCurrent(0) !== 6 || diceSet.getCurrent(1) !== 6 || diceSet.getCurrent(2) !== 6 || diceSet.getCurrent(3) !== 6 || diceSet.getCurrent(4) !== 6 || diceSet.getCurrent(5) !== 6) {
   
   //With a for loop I go trhout all 6 dice elements
   for (let j: number = 0; j < 6; j++) {
-    //console.log('WE START THE LOOP' + diceSet.getCurrent());
     if (diceSet.getCurrent(j) !== 6) {
-      //console.log ('THIS IS NOT 6, it is: ' + diceSet.getCurrent(i));
       diceSet.reroll(j);
     }
 
-  }console.log(diceSet.getCurrent());
+  }//console.log(diceSet.getCurrent() + ' is not equal to ' + [6, 6, 6, 6, 6, 6]);
   
-  i--
-  if (i === 0) {break};
 }
 
 
