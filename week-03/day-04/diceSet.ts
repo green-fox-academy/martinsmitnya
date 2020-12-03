@@ -74,17 +74,11 @@ while (diceSet.getCurrent(0) !== 6 || diceSet.getCurrent(1) !== 6 || diceSet.get
       diceSet.reroll(j);
     }
 
-  }
+  }console.log(diceSet.getCurrent() + ' is not equal to ' + [6, 6, 6, 6, 6, 6]);
   
 }
+console.log('Result is: ' + diceSet.getCurrent());
 
-
-console.log(diceSet.getCurrent());
-
-
-
-/*diceSet.getCurrent() !== [6, 6, 6, 6, 6, 6*/
-//console.log(diceSet.getCurrent() + ' is not equal to ' + [6, 6, 6, 6, 6, 6]);
 
 
 
