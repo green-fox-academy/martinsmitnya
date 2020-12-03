@@ -67,12 +67,11 @@ diceSet.roll()
 console.log(diceSet.getCurrent());
 
 
-let i:number = 20;
+let i:number = 1000;
 
 
 while (true) {
-  i--
-  if (i === 0) {break};
+  
   //With a for loop I go trhout all 6 dice elements
   for (let j: number = 0; j < 6; j++) {
     //console.log('WE START THE LOOP' + diceSet.getCurrent());
@@ -83,7 +82,8 @@ while (true) {
 
   }console.log(diceSet.getCurrent());
   
-
+  i--
+  if (i === 0) {break};
 }
 
 
