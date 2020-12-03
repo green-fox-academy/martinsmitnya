@@ -7,7 +7,8 @@ Every sharpie object is created with a default 100 as inkAmount
 We can use() the sharpie objects which decreases inkAmount
 */
 
-class Sharpie {
+
+export class Sharpie {
   private _color:string;
   private _width:number;
   private _inkAmount:number;
@@ -22,10 +23,18 @@ class Sharpie {
     this._inkAmount --;
   };
 
+  emptyOut(){
+    this._inkAmount = 0;
+  };
+
+  get inkLeft():number {
+    return this._inkAmount;
+  }
+
 
 
 }
 
 let pen = new Sharpie('blue', 1.01);
 
-console.log(pen);
+//console.log(pen);
