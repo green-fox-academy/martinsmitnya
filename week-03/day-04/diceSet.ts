@@ -67,7 +67,7 @@ diceSet.roll()
 console.log('START: ' + diceSet.getCurrent());
 
 
-while (/*diceSet.getCurrent() !== [6, 6, 6, 6, 6, 6] */diceSet.getCurrent(0) !== 6 || diceSet.getCurrent(1) !== 6 || diceSet.getCurrent(2) !== 6 || diceSet.getCurrent(3) !== 6 || diceSet.getCurrent(4) !== 6 || diceSet.getCurrent(5) !== 6) {
+while (diceSet.getCurrent() !== [6, 6, 6, 6, 6, 6]) {
   
   //With a for loop I go trhout all 6 dice elements
   for (let j: number = 0; j < 6; j++) {
@@ -75,9 +75,16 @@ while (/*diceSet.getCurrent() !== [6, 6, 6, 6, 6, 6] */diceSet.getCurrent(0) !==
       diceSet.reroll(j);
     }
 
-  }//console.log(diceSet.getCurrent() + ' is not equal to ' + [6, 6, 6, 6, 6, 6]);
+  }console.log(diceSet.getCurrent() + ' is not equal to ' + [6, 6, 6, 6, 6, 6]);
   
 }
 
 
 console.log(diceSet.getCurrent());
+
+
+
+
+
+
+diceSet.getCurrent(0) !== 6 || diceSet.getCurrent(1) !== 6 || diceSet.getCurrent(2) !== 6 || diceSet.getCurrent(3) !== 6 || diceSet.getCurrent(4) !== 6 || diceSet.getCurrent(5) !== 6
