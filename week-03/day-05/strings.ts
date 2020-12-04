@@ -39,7 +39,7 @@ function tellMeYAgain(convert:string){
   } 
   //Add teh first character AND decreese the length of the array
   else {
-  return arr[arr.length-1] + tellMeYAgain(convert.slice(0, arr.length-1))
+  return arr[0] + tellMeYAgain(convert.slice(1))
   }
   
 }
