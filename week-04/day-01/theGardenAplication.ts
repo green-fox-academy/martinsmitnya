@@ -7,56 +7,51 @@ eg. watering with 40 and 4 of them need water then each gets watered with 10
 */
 
 class Garden {
-  // protected _trees: Tree[];
-  // protected _flowers: Flower[];
-  protected _plants:(Flower | Tree)[];
-  protected _name:string;
+  protected _plants: (Flower | Tree)[];
+  protected _name: string;
 
-  constructor (name:string) {
+  constructor(name: string) {
     this._name = name ?? 'myDefaultGardenName'
     this._plants = [];
   }
 
-  /*
-  public addTrees (tree:Tree) {
-    this._trees.push(tree);
+  public addPlant(plant: (Flower | Tree)) {
+    this._plants.push(plant);
   }
-  public addFlowers (flower:Flower) {
-    this._flowers.push(flower);
+
+  //Shows garden without modifications
+  public checkGarden(): void {
+    for (let i: number = 0; i < this._plants.length; i++) {
+      if (this._plants[i].checkWaterLevel() === 1) {
+        console.log(`The ${this._plants[i].getName()} needs water`);
+      } else {
+        console.log(`The ${this._plants[i].getName()} doesnt need water`);
+      }
+    }
   }
-  */
- public addPlant (plant: (Flower | Tree)) {
-  this._plants.push(plant);
-}
 
-
-
-  public watering (waterAmount:number) {
+  //Waters the garden with wet amount, distributing evenly among plants that need water
+  public watering(waterAmount: number): void {
     console.log(`Watering with ${waterAmount}`);
-    //when watering it should only water those what needs water with equally divided amount amongst them
-    
-    // if it does water the plant with some part of the water
     let waterablePlants: (Tree | Flower)[] = [];
-    //goes throu each FLower OR tree in the garden
-    //checks if the given tree/flower needs water -> pushes it to the watering array
-    for (let i:number = 0; i <this._plants.length; i++){
+    //Cehck each plant, if it needs water -> if yes pushes it to the watering array
+    for (let i: number = 0; i < this._plants.length; i++) {
       if (this._plants[i].checkWaterLevel() === 1) {
         waterablePlants.push(this._plants[i]);
-      }else {
-        return this._plants[i].checkWaterLevel;
+      } else {
+        console.log(`The ${this._plants[i].getName()} doesnt need water`);
       }
-      
+
     }
-    for (let i:number = 0; i <waterablePlants.length; i++) {
-      waterablePlants[i].wateringPlant(waterAmount/waterablePlants.length);
-
-      return waterablePlants[i].checkWaterLevel;
+    //WATERING ARRAY At the watering section it waters the plants that are pushed here
+    for (let i: number = 0; i < waterablePlants.length; i++) {
+      waterablePlants[i].wateringPlant(waterAmount / waterablePlants.length);
+      if (this._plants[i].checkWaterLevel() === 0) {
+        console.log(`The ${this._plants[i].getName()} doesnt need water`);
+      } else {
+        console.log(`The ${this._plants[i].getName()} needs water`);
+      }
     }
-
-
-    
-
-
 
 
   }
@@ -73,26 +68,28 @@ eg. watering with 10 the tree's amount of water should only increase with 4
 */
 
 class Tree {
-  protected _color:string;
+  protected _color: string;
   protected _waterLevel: number;
 
-  constructor (color:string) {
+  constructor(color: string) {
     this._color = color;
     this._waterLevel = 0;
   }
+  public getName() {
+    return `${this._color} Tree`
+  }
 
-  checkWaterLevel():number {
+  public checkWaterLevel(): number {
     if (this._waterLevel < 10) {
       return 1
-      console.log(`The ${this._color} Tree needs water`);
-    }else {
+    } else {
       return 0
-      console.log(`The ${this._color} Tree doesnt need water`);
+
     }
   }
 
-  wateringPlant(waterAmount:number):void {
-    this._waterLevel += waterAmount*0.4; 
+  public wateringPlant(waterAmount: number): void {
+    this._waterLevel += waterAmount * 0.4;
   }
 }
 
@@ -109,52 +106,40 @@ eg. watering with 10 the flower's amount of water should only increase with 7.5
 
 
 class Flower {
-  protected _color:string;
+  protected _color: string;
   protected _waterLevel: number;
 
-  constructor (color:string) {
+  constructor(color: string) {
     this._color = color;
     this._waterLevel = 0;
   }
-  
-  checkWaterLevel ():number {
+  public getName() {
+    return `${this._color} Flower`
+  }
+
+  public checkWaterLevel(): number {
     if (this._waterLevel < 5) {
       return 1;
-      console.log(`The ${this._color} Flower needs water`);
-    }else {
+    } else {
       return 0;
-      console.log(`The ${this._color} Flower doesnt need water`);
     }
   }
-  
-  wateringPlant(waterAmount:number):void {
-    this._waterLevel += waterAmount*0.75; 
+
+  public wateringPlant(waterAmount: number): void {
+    this._waterLevel += waterAmount * 0.75;
   }
 
 }
 
 //Testing
-/*
-let pineTree = new Tree ('black');
-let tulipFlower = new Flower('red');
-console.log(pineTree, tulipFlower);
 
-pineTree.checkWaterLevelOfTree();
-tulipFlower.checkWaterLevelOfFlower();
+let garden = new Garden('BeautifulGarden');
 
-pineTree.wateringTree(20);
-tulipFlower.wateringFlower(20);
+garden.addPlant(new Flower('yellow'));
+garden.addPlant(new Flower('blue'));
+garden.addPlant(new Tree('purple'));
+garden.addPlant(new Tree('orange'));
 
-pineTree.checkWaterLevelOfTree();
-tulipFlower.checkWaterLevelOfFlower();
-*/
-
-
-let garden = new Garden ('BeautifulGarden');
-let pineTree = new Tree ('black');
-let tulipFlower = new Flower('red');
-
-garden.addPlant(pineTree);
-garden.addPlant(tulipFlower);
-
-console.log(garden.watering(20));
+garden.checkGarden();
+garden.watering(40);
+garden.watering(70);
