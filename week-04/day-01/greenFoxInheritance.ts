@@ -61,7 +61,7 @@ Student(name, age, gender, previousOrganization): beside the given parameters, i
 Student(): sets name to Jane Doe, age to 30, gender to female, previousOrganization to The School of Life, skippedDays to 0
 */
 
-export class Student extends Person {
+class Student extends Person {
   protected _previousOrganization: string;
   protected _skippedDays: number;
 
@@ -85,13 +85,14 @@ export class Student extends Person {
 
 }
 
-/* TESTING
+// TESTING
 let Emir = new Student('Emir', 23, 'male', 'BGE');
+/*
 console.log(Emir);
 Emir.introduce();
 Emir.skipDays(3);
 Emir.getGoal();
-console.log(Emir)
+console.log(Emir);
 */
 
 
@@ -126,8 +127,9 @@ class Mentor extends Person {
   }
 }
 
-/*
+// TESTING
 let Basheer: Mentor = new Mentor('Basheer', 34, 'male', 'senior');
+/*
 console.log(Basheer);
 Basheer.getGoal();
 Basheer.introduce();
@@ -171,9 +173,62 @@ class Sponsor extends Person {
   }
 }
 
-let Brian: Sponsor = new Sponsor();
+// TESTING
+let Brian: Sponsor = new Sponsor('Brian', 44, 'male', 'Apple');
+/*
 console.log(Brian);
 Brian.introduce();
 Brian.getGoal();
 Brian.hire();
 console.log(Brian);
+*/
+
+
+/*
+Create a Cohort class that has the following
+
+fields:
+name: the name of the cohort
+students: a list of Students
+mentors: a list of Mentors
+
+The Cohort class has the following constructors:
+
+Cohort(name): beside the given parameter, it sets students and mentors as empty lists
+
+methods:
+addStudent(Student): adds the given Student to students list
+addMentor(Mentor): adds the given Mentor to mentors list
+info(): prints out 'The name cohort has size of students students and size of mentors mentors.'
+
+*/
+
+class Cohort {
+  protected _name:string;
+  protected _students: Student[];
+  protected _mentors: Mentor[];
+
+  constructor(name:string) {
+    this._name = name;
+    this._students = [];
+    this._mentors = [];
+  }
+
+  public addStudent(student: Student) {
+    this._students.push(student);
+  }
+  public addMentor (mentor: Mentor) {
+    this._mentors.push(mentor);
+  }
+  public info() {
+    console.log(`The ${this._name} cohort has ${this._students.length} students and ${this._mentors.length} mentors.`);
+  }
+  
+}
+
+let EGO = new Cohort('EGO');
+console.log(EGO);
+EGO.addMentor(Basheer);
+EGO.addStudent(Emir);
+EGO.info();
+console.log(EGO);
