@@ -94,3 +94,61 @@ Emir.getGoal();
 console.log(Emir)
 */
 
+
+
+/*
+Create a Mentor class that has the same fields and methods as the Person class, and has the following additional
+
+fields:
+level: the level of the mentor (junior / intermediate / senior)
+methods:
+getGoal(): prints out 'My goal is: Educate brilliant junior software developers.'
+introduce(): 'Hi, I'm name, a age year old gender level mentor.'
+The Mentor class has the following constructors:
+
+Mentor(name, age, gender, level)
+Mentor(): sets name to Jane Doe, age to 30, gender to female, level to intermediate
+*/
+
+class Mentor extends Person {
+  protected _level:string;
+
+  constructor(name?:string, age?: number, gender?:string, level?:string) {
+    super(name, age, gender);
+    this._level = level ?? 'intermediate';
+  }
+
+  public getGoal() {
+    console.log(`My goal is: Educate brilliant junior software developers.`);
+  }
+  public introduce () {
+    console.log(`Hi, I'm ${this._name}, a ${this._age} year old ${this._gender} ${this._level} mentor.`);
+  }
+}
+
+/*
+let Basheer: Mentor = new Mentor('Basheer', 34, 'male', 'senior');
+console.log(Basheer);
+Basheer.getGoal();
+Basheer.introduce();
+*/
+
+/*
+Create a Sponsor class that has the same fields and methods as the Person class, and has the following additional
+
+fields:
+company: name of the company
+hiredStudents: number of students hired
+method:
+introduce(): 'Hi, I'm name, a age year old gender who represents company and hired hiredStudents students so far.'
+hire(): increase hiredStudents by 1
+getGoal(): prints out 'My goal is: Hire brilliant junior software developers.'
+The Sponsor class has the following constructors:
+
+Sponsor(name, age, gender, company): beside the given parameters, it sets hiredStudents to 0
+Sponsor(): sets name to Jane Doe, age to 30, gender to female, company to Google and hiredStudents to 0
+*/
+
+class Sponsor extends Person {
+  
+}
