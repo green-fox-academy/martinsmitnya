@@ -55,10 +55,11 @@ class Tree {
     }
   }
 
-  wateringTree(waterAmount:number) {
+  wateringTree(waterAmount:number):void {
     this._waterLevel += waterAmount*0.4; 
   }
 }
+
 
 
 
@@ -87,8 +88,24 @@ class Flower {
     }
   }
   
-  wateringFlower(waterAmount:number) {
+  wateringFlower(waterAmount:number):void {
     this._waterLevel += waterAmount*0.75; 
   }
 
 }
+
+//Testing
+/*
+let pineTree = new Tree ('black');
+let tulipFlower = new Flower('red');
+console.log(pineTree, tulipFlower);
+
+pineTree.checkWaterLevelOfTree();
+tulipFlower.checkWaterLevelOfFlower();
+
+pineTree.wateringTree(20);
+tulipFlower.wateringFlower(20);
+
+pineTree.checkWaterLevelOfTree();
+tulipFlower.checkWaterLevelOfFlower();
+*/
