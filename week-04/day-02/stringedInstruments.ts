@@ -48,7 +48,7 @@ export class ElectricGuitar extends StringedInstrument {
     super (name ?? 'Electric Guitar', numberOfStrings ?? 6);
   }
   public play() {
-    console.log(`${this._name} a ${this._numberOfStrings} stringed instrument that goes`, this.sound());
+    console.log(`${this._name} a ${this._numberOfStrings} stringed instrument that goes ${ this.sound()}`);
   }
   public sound():string {
     return this._sound
@@ -63,7 +63,7 @@ export class BassGuitar extends StringedInstrument {
     super (name ?? 'Bass Guitar', numberOfStrings ?? 4);
   }
   public play() {
-    console.log(`${this._name} a ${this._numberOfStrings} stringed instrument that goes`, this.sound() );
+    console.log(`${this._name} a ${this._numberOfStrings} stringed instrument that goes ${ this.sound()}`);
   }
   public sound():string {
     return this._sound
