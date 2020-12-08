@@ -78,7 +78,7 @@ export class Violin extends StringedInstrument {
     super (name ?? 'Violin', numberOfStrings ?? 4);
   }
   public play() {
-    console.log(`${this._name} a ${this._numberOfStrings} stringed instrument that goes`, this.sound());
+    console.log(`${this._name} a ${this._numberOfStrings} stringed instrument that goes ${ this.sound()}`);
   }
   public sound():string {
     return this._sound
