@@ -1,0 +1,34 @@
+body {
+  margin: 0px;
+  padding:0px;
+}
+
+.container {
+  display: flex;
+  width: 400px;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+
+
+
+.green {
+  background-color: green;
+  width: 100%;
+  height: 25vh;
+  order: 1;
+}
+
+.yellow {
+  background-color: yellow;
+  width: 100%;
+  height: 50vh;
+  order: 3;
+}
+
+.purple {
+  background-color: purple;
+  width: 100%;
+  height: 25vh;
+}
