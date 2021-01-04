@@ -1,0 +1,65 @@
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+.purpleHeader {
+  background-color: purple;
+  width: 100%;
+  height: 10vh;
+  padding: 0px;
+  margin: 0px;
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center
+}
+
+.cyanNavlink {
+  background-color: cyan;
+  margin: 10px;
+  padding: 10px 50px;
+  list-style: none;
+  display: inline-block;
+  justify-content: flex-start;
+  
+}
+
+.cyanNavlink a {
+  text-decoration: none;
+}
+
+
+.contentContainer {
+  display: flex;
+  width:100%;
+  height: 90vh;
+  margin-top: 10vh;
+  padding: 0px;
+}
+
+.yellowMainContent {
+  background-color: yellow;
+  margin: 10px;
+  width: 70%;
+  height: 100;
+  display: inline-block;
+
+}
+
+.greenSidebar {
+  background-color: green;
+  margin: 10px;
+  width: 30%;
+  height: 100;
+  display: inline-block;
+
+}
+
+.greyFooter {
+ background-color: gray;
+ display:block;
+ width: 98%;
+ height: 50px;
+ margin: 0px 10px 10px 10px
+}

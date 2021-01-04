@@ -1,0 +1,31 @@
+.aquaHeader {
+  margin: 0px;
+}
+
+.contentContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.orangeSidebar {
+  background-color: orange;
+
+}
+.redMainContent {
+  background-color: red;
+
+}
+.blackIcon {  
+  background-color: black;
+
+}
+
+.purpleSidebar{  
+  background-color: purple;
+
+}
+
+.blueFooter {  
+  background-color:blue;
+
+}
