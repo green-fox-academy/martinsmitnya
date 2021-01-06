@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Workshop: innerHTML, textContent</title>
+  </head>
+  <body>
+    <p class="apple">apple</p>
+    <p class="balloon">banana</p>
+    <p class="cat">car</p>
+    <p class="animals">goat rabbit <strong>cat</strong> dog</p>
+
+    <!-- You can work in the html or in a separate js file. Like: -->
+    <script>
+    // 1)  Append every paragraph with the last one's content.
+    const apple = document.querySelector('.apple');
+    const balloon = document.querySelector('.balloon');
+    const cat = document.querySelector('.cat');
+    const animals = document.querySelector('.animals');
+    let myElements = [apple, balloon, cat, animals];
+    
+    function innerTextAppender (myElements) { 
+      for (let i = 1; i < myElements.length; i++) {
+        myElements[i].innerText = myElements[i].innerText + ' ' + myElements[i-1].innerText;
+      }
+    }
+
+    // innerTextAppender(myElements);
+
+    // 2)  Do the same again, but you should keep the cat strong.
+    function innerHTMLAppender (myElements) {
+      for (let i = 1; i < myElements.length; i++) {
+        myElements[i].innerHTML = myElements[i].innerHTML + ' ' + myElements[i-1].innerHTML;
+      }
+    }
+
+    innerHTMLAppender (myElements);
+    </script>
+
+    <!-- OR
+    <script src="content-1.js"></script> -->
+  </body>
+</html>
