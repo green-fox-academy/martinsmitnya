@@ -115,14 +115,7 @@ body {
   box-shadow: 0px 0px 10px 5px rgb(200, 200, 200, 0.8);
 }
 
-.sliderListItem img{
-  align-self: center;
-  height: 40px;
-  width: 40px;
-  object-fit: cover;
-}
-/*ACTIVE*/
-.sliderListItemActive img{
+.sliderListItemImg{
   align-self: center;
   height: 40px;
   width: 40px;
