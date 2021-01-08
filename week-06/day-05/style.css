@@ -1,0 +1,68 @@
+body {
+  background: radial-gradient(white, rgb(200, 200, 200));
+}
+
+.photoViewer {
+  display: flex;
+  width: 700px;
+  height: 300px;
+  box-shadow: -5px 5px 10px 4px rgba(0,0,0,0.25);
+ 
+}
+
+.photoViewer button {
+  height: 100%;
+  background-color:white;
+  padding: 16px;
+  border: none;
+}
+
+
+
+.projector {
+  display:flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin:0px;
+  padding:0px;
+  width: 100%;
+  height: 100%;
+  
+}
+
+.projectorImage {
+  margin:0px;
+  padding: 0px;
+  width:100%;
+  height: 100%;
+}
+
+.projectorDescription {
+  position:absolute;
+  width: 590.22px;
+  height: 83px;
+
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 8px;
+}
+
+.projectorDescription h3 {
+  color:white;
+  padding: 0px;
+  margin: 8px 0px;
+  max-height: 22px;
+  overflow: hidden;
+}
+
+.projectorDescription p {
+  color: rgb(200, 200, 200);
+  font-size: 12px;
+  margin: 0px;
+  max-height: 30px;
+  overflow: hidden;
+}
+
+/* .slider {
+  display: flex;
+} */
+
