@@ -1,5 +1,17 @@
 body {
   background: radial-gradient(white, rgb(200, 200, 200));
+  width: 100%;
+  height:100vh;
+  margin:0px;
+  padding:0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centerWrapper {
+  display:flex;
+  flex-direction: column;
 }
 
 .photoViewer {
