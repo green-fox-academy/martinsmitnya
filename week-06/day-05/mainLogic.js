@@ -2,7 +2,8 @@ let projectorImage = document.querySelector('.projectorImage');
 let sideButton = document.querySelectorAll('button');
 let sliderlItems = document.querySelectorAll ('.sliderListItem');
 let sliderlItemImg = document.querySelectorAll ('.sliderListItemImg');
-let currentImg = sliderlItems[0];
+//Initialization
+currentImg = 0;
 
 for (let i = 0; i < sideButton.length; i++) {
   sideButton[i].onmouseover = () => {
@@ -16,16 +17,28 @@ for (let i = 0; i < sideButton.length; i++) {
   sideButton[i].onclick = () => {
     if (i == 0) {
       console.log('LEFT 0');
-      if (currentImg == sliderlItems[0]) {
-        console.log('FIRST TIEM HERE 0');
-      } else {console.log('Previous picture')}
+      if (currentImg == 0) {
+        let previous = sliderlItemImg[sliderlItemImg.length -1].getAttribute('src');
+        projectorImage.setAttribute('src', previous);
+        currentImg = sliderlItemImg.length -1;
+      } else {
+        let previous = sliderlItemImg[currentImg -1 ].getAttribute('src');
+        projectorImage.setAttribute('src', previous);
+        currentImg --;
+      }
       
     } 
     else {
       console.log('RIGHT 1')
-      if (currentImg == sliderlItems[sliderlItems.length-1]) {
-        console.log('LAST ITEM HERE 8');
-      } else {console.log('Next picture')}
+      if (currentImg == sliderlItemImg.length-1) {
+        let next = sliderlItemImg[0].getAttribute('src');
+        projectorImage.setAttribute('src', next);
+        currentImg = 0;
+      } else {
+        let next = sliderlItemImg[currentImg +1].getAttribute('src');
+        projectorImage.setAttribute('src', next);
+        currentImg ++;
+      }
     }
       
   }//Oclivk next img logic done
@@ -43,7 +56,7 @@ for (let i = 0; i < sliderlItems.length; i++) {
   //onclick view clicked image
   sliderlItems[i].onclick = () => {
     let clickedImg = sliderlItemImg[i].getAttribute('src');
-    currentImg = sliderlItems[i];
+    currentImg = i;
     projectorImage.setAttribute('src', clickedImg);
   }
 }
