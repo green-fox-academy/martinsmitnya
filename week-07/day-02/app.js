@@ -58,15 +58,7 @@ app.get('/greeter', (req, res) => {
   }
 });
 
-
-
-
-let PORT = 3000;
-app.listen(PORT, () => {
-  console.log(`The server is up and running on port ${PORT}`);
-});
-
-//AppandA
+//AppendA
 app.get('/appenda/:input', (req, res) => {
   let input = req.params.input;
   let answer ='';
@@ -95,7 +87,7 @@ app.post('/dountil/:action', (req, res) => {
   } else if (input === 'sum') {
     let sumValue = inputBody *4;
     answer = {result: sumValue};
-    
+
     //factorial
   } else if (input === 'factor') {
     let factorValue = 1;
@@ -106,4 +98,13 @@ app.post('/dountil/:action', (req, res) => {
     answer = {result: factorValue};
   }
   res.json(answer);
+});
+
+
+
+
+
+let PORT = 3000;
+app.listen(PORT, () => {
+  console.log(`The server is up and running on port ${PORT}`);
 });
