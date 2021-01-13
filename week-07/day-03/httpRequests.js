@@ -1,3 +1,4 @@
+//NO FUNCTION
 
 let xhr = new XMLHttpRequest();
 
@@ -26,3 +27,29 @@ xhr.onload = () => {
 // }
 
 xhr.send();
+
+
+
+//WITH FUNCTION
+
+// let xhr = new XMLHttpRequest();
+// function parseData(method, endPoint, callback) {
+//   xhr.open(method, endPoint);
+//   xhr.onload = callback;
+//   xhr.send();
+// }
+
+
+// parseData('GET', 'https://swapi.dev/api/starships/9/', () => {
+//   let data = JSON.parse(xhr.response);
+//   let dataKeys = Object.keys(data);
+
+//   let parentlist = document.querySelector('#list');
+
+//   for (let i = 0; i < dataKeys.length; i++) {
+//     let myItem = document.createElement('li');
+//     myItem.innerHTML = data[dataKeys[i]];
+//     parentlist.appendChild(myItem);
+//   }
+
+// });
