@@ -22,7 +22,8 @@ conn.connect((err) => {
 //Server GET, POST, PUT, DELETE
 
 app.get('/', (req, res) => {
-  res.send('Good connection to bookstore');
+  //SendFile
+  res.sendFile( __dirname + '/bookTitles.html');
 })
 
 app.get('/bookTitle', (req, res) => {
@@ -46,8 +47,7 @@ app.get('/bookTitle', (req, res) => {
     }
   })
 
-  //SendFile
-  //res.sendFile( __dirname + '/bookTitles.html');
+  
 })
 
 app.get('/bookData', (req, res) => {
