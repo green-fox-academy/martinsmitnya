@@ -11,27 +11,27 @@ const conn = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: 'password',
-  database: 'bookstore', 
+  database: 'bookstore',
 })
 
 conn.connect((err) => {
   if (err) throw err;
-  console.log (`Succesfully connected to - bookstore - Database`);
+  console.log(`Succesfully connected to - bookstore - Database`);
 })
 
 //Server GET, POST, PUT, DELETE
 
-app.get ('/', (req, res) => {
+app.get('/', (req, res) => {
   res.send('Good connection to bookstore');
 })
 
-app.get ('/bookTitle', (req, res) => {
-  
+app.get('/bookTitle', (req, res) => {
+
   //The Data
   conn.query('SELECT * FROM book_mast;', (err, rows) => {
     if (err) {
       console.log(err);
-      res.status(500).json({error: 'database error'});
+      res.status(500).json({ error: 'database error' });
       return
 
     } else {
@@ -55,19 +55,33 @@ app.get('/bookData', (req, res) => {
   conn.query('SELECT * FROM book_mast LEFT JOIN category ON category.cate_id = book_mast.cate_id LEFT JOIN author ON author.aut_id = book_mast.aut_id LEFT JOIN publisher ON publisher.pub_id = book_mast.pub_id;', (err, rows) => {
     if (err) {
       console.log(err);
-      res.status(500).json({error: 'database error'});
+      res.status(500).json({ error: 'database error' });
       return
     } else {
       let allBooks = [];
       for (let i = 0; i < rows.length; i++) {
-        //allBooks.push(rows[i].book_name, rows[i].aut_name, rows[i].cate_descrip, rows[i].book_price);
-        if (req.query.category === rows[i].cate_descrip) {
+        let category = req.query.category === rows[i].cate_descrip;
+        let publisher = req.query.publisher === rows[i].pub_name;
+        let plt = req.query.plt > rows[i].book_price;
+
+        if (category && publisher && plt) {
           allBooks.push(rows[i].book_name, rows[i].aut_name, rows[i].cate_descrip, rows[i].book_price);
-        } else if (req.query.publisher === rows[i].pub_name) {
+        } else if (category && publisher) {
           allBooks.push(rows[i].book_name, rows[i].aut_name, rows[i].cate_descrip, rows[i].book_price);
-        } else if (req.query.plt > rows[i].book_price) {
+        } else if (category && plt) {
+          allBooks.push(rows[i].book_name, rows[i].aut_name, rows[i].cate_descrip, rows[i].book_price);
+        } else if (publisher && plt) {
+          allBooks.push(rows[i].book_name, rows[i].aut_name, rows[i].cate_descrip, rows[i].book_price);
+          //Individual query
+        } else if (category && !req.query.publisher && !req.query.plt) {
+          allBooks.push(rows[i].book_name, rows[i].aut_name, rows[i].cate_descrip, rows[i].book_price);
+        }else if (publisher && !req.query.category && !req.query.plt) {
+          allBooks.push(rows[i].book_name, rows[i].aut_name, rows[i].cate_descrip, rows[i].book_price);
+        }else if (plt && !req.query.category && !req.query.publisher) {
           allBooks.push(rows[i].book_name, rows[i].aut_name, rows[i].cate_descrip, rows[i].book_price);
         }
+
+
       }
 
       res.json(allBooks);
@@ -80,6 +94,6 @@ app.get('/bookData', (req, res) => {
 
 
 //Listen
-app.listen(3000, ()=> {
+app.listen(3000, () => {
   console.log('Server online PORT 3000')
 })
