@@ -60,26 +60,13 @@ app.get('/bookData', (req, res) => {
     } else {
       let allBooks = [];
       for (let i = 0; i < rows.length; i++) {
-
-        // //allBooks.push(rows[i].book_name, rows[i].aut_name, rows[i].cate_descrip, rows[i].book_price);
-        // if (req.query.category === rows[i].cate_descrip) {
-        //   allBooks.push(rows[i].book_name, rows[i].aut_name, rows[i].cate_descrip, rows[i].book_price);
-        // } else if (req.query.publisher === rows[i].pub_name) {
-        //   allBooks.push(rows[i].book_name, rows[i].aut_name, rows[i].cate_descrip, rows[i].book_price);
-        // } else if (req.query.plt > rows[i].book_price) {
-        //   allBooks.push(rows[i].book_name, rows[i].aut_name, rows[i].cate_descrip, rows[i].book_price);
-        // }
-
-        
-        //I push evertyhing and if it is not the right paramente I pop it
-        allBooks.push(rows[i].book_name, rows[i].aut_name, rows[i].cate_descrip, rows[i].book_price);
-
-        if (req.query.category !== rows[i].cate_descrip) {
-          allBooks.pop(rows[i].book_name, rows[i].aut_name, rows[i].cate_descrip, rows[i].book_price);
-        } else if (req.query.publisher !== rows[i].pub_name) {
-          allBooks.pop(rows[i].book_name, rows[i].aut_name, rows[i].cate_descrip, rows[i].book_price);
-        } else if (req.query.plt < rows[i].book_price) {
-          allBooks.pop(rows[i].book_name, rows[i].aut_name, rows[i].cate_descrip, rows[i].book_price);
+        //allBooks.push(rows[i].book_name, rows[i].aut_name, rows[i].cate_descrip, rows[i].book_price);
+        if (req.query.category === rows[i].cate_descrip) {
+          allBooks.push(rows[i].book_name, rows[i].aut_name, rows[i].cate_descrip, rows[i].book_price);
+        } else if (req.query.publisher === rows[i].pub_name) {
+          allBooks.push(rows[i].book_name, rows[i].aut_name, rows[i].cate_descrip, rows[i].book_price);
+        } else if (req.query.plt > rows[i].book_price) {
+          allBooks.push(rows[i].book_name, rows[i].aut_name, rows[i].cate_descrip, rows[i].book_price);
         }
       }
 
