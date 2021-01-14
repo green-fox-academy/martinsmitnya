@@ -83,7 +83,7 @@ app.get('/bookData', (req, res) => {
 
 
       }
-
+      //This is the response Array with all the necesary books data
       res.json(allBooks);
 
     }
