@@ -51,8 +51,8 @@ app.get ('/bookTitle', (req, res) => {
 })
 
 app.get('/bookData', (req, res) => {
-  //Data
-  conn.query('SELECT * FROM book_mast LEFT JOIN category ON category.cate_id = book_mast.cate_id LEFT JOIN author ON author.aut_id = book_mast.aut_id;', (err, rows) => {
+  //Data 
+  conn.query('SELECT * FROM book_mast LEFT JOIN category ON category.cate_id = book_mast.cate_id LEFT JOIN author ON author.aut_id = book_mast.aut_id LEFT JOIN publisher ON publisher.pub_id = book_mast.pub_id;', (err, rows) => {
     if (err) {
       console.log(err);
       res.status(500).json({error: 'database error'});
@@ -60,8 +60,15 @@ app.get('/bookData', (req, res) => {
     } else {
       let allBooks = [];
       for (let i = 0; i < rows.length; i++) {
-        //allBooks.push(rows[i].book_name, AUTHOR, CATEGORY, PUBLISHER, rows[i].book_price);
-        allBooks.push(rows[i].book_name, rows[i].aut_name, rows[i].cate_descrip, rows[i].book_price);
+        //allBooks.push(rows[i].book_name, rows[i].aut_name, rows[i].cate_descrip, rows[i].book_price);
+
+        if (req.query.category === rows[i].cate_descrip) {
+          allBooks.push(rows[i].book_name, rows[i].aut_name, rows[i].cate_descrip, rows[i].book_price);
+        } else if (req.query.publisher === rows[i].pub_name) {
+          allBooks.push(rows[i].book_name, rows[i].aut_name, rows[i].cate_descrip, rows[i].book_price);
+        } else if (req.query.plt > rows[i].book_price) {
+          allBooks.push(rows[i].book_name, rows[i].aut_name, rows[i].cate_descrip, rows[i].book_price);
+        }
       }
 
       res.json(allBooks);
