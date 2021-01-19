@@ -56,18 +56,15 @@
     //Directorn
     let horizontal = 0;
     let vertical = 0;
-    
-
-
     for (let i = 0; i < 4; i++) {
       navBar.children[i].addEventListener('click', () => {
         let action = navBar.children[i].getAttribute('data-action');
         let direction = navBar.children[i].getAttribute('data-direction');
 
         if (direction === 'up') {
-          vertical -=10;
+          vertical -= 10;
         } else if (direction === 'down') {
-          vertical +=10;
+          vertical += 10;
         } else if (direction === 'left') {
           horizontal -= 10;
         } else if (direction === 'right') {
@@ -84,15 +81,14 @@
         let action = navBar.children[j].getAttribute('data-action');
         let direction = navBar.children[j].getAttribute('data-direction');
 
-        if (direction === 'in' ) {
+        if (direction === 'in') {
           zoom += 20;
-        } else if (direction === 'out' && zoom >20) {
+        } else if (direction === 'out' && zoom > 20) {
           zoom -= 20;
         }
         image.setAttribute('style', `background-size: ${zoom}%`);
       })
     }
-
   </script>
   <!-- OR
     <script src="bubbling.js"></script> -->
