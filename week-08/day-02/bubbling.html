@@ -54,14 +54,23 @@
     let navBar = document.querySelector('nav');
     let image = document.querySelector('.img-inspector');
     //Directorn
+    let horizontal = 0;
+    let vertical = 0;
     for (let i = 0; i < 4; i++) {
       navBar.children[i].addEventListener('click', () => {
         let action = navBar.children[i].getAttribute('data-action');
         let direction = navBar.children[i].getAttribute('data-direction');
 
-        // console.log (image.setAttribute('style', 'background-size: 220%;'));
-
-        // console.log(action, direction);
+        if (direction === 'up') {
+          vertical -=10;
+        } else if (direction === 'down') {
+          vertical +=10;
+        } else if (direction === 'left') {
+          horizontal -= 10;
+        } else if (direction === 'right') {
+          horizontal += 10;
+        }
+        image.setAttribute('style', `background-position: ${horizontal}px ${vertical}px`);
       })
     }
 
@@ -72,12 +81,12 @@
         let action = navBar.children[j].getAttribute('data-action');
         let direction = navBar.children[j].getAttribute('data-direction');
 
-        if (direction === 'in') {
+        if (direction === 'in' ) {
           zoom += 20;
-        } else {
+        } else if (direction === 'out' && zoom >20) {
           zoom -= 20;
         }
-        image.setAttribute('style', `background-size: ${zoom}%`)
+        image.setAttribute('style', `background-size: ${zoom}%`);
       })
     }
 
