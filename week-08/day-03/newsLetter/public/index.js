@@ -22,7 +22,6 @@ form.addEventListener('submit', (event) => {
     xhr.open('POST', 'http://localhost:3000/signup');
     xhr.setRequestHeader('content-type', 'application/json');
     
-    //WE propelry get the reqeest body here
     xhr.send(requestBody);
 
     form.reset();

@@ -1,4 +1,5 @@
 const express = require('express');
+const mysql = require('mysql');
 const app = express();
 app.use(express.json());
 app.use(express.static('public'));
@@ -8,7 +9,11 @@ app.get('/', (req, res) => {
 });
 
 app.post('/signup', (req, res) => {
-  //post reuest
+  let username = req.body.username;
+  let email = req.body.email;
+
+  
+  console.log(username, email);
 });
 
 
