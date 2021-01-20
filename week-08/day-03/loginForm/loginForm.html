@@ -10,20 +10,20 @@
 
 <body>
   <div class="formWrapper">
-    <form action="/login" , method="post">
+    <form id = "form" action="/login" , method="post">
       <h1 class = "bannerText">ACCOUNT LOGIN</h1>
       <div class="inputs">
         <label for="username"> USERNAME:
-          <input type="text" id="username" name="username">
+          <input type="text" id="username" name="username" required> 
         </label>
       </div>
       <div class="inputs">
         <label for="password"> PASSWORD:
-          <input type="password" id="password" name="password">
+          <input type="password" id="password" name="password" required>
         </label>
         <p class="reminder">Forgot password?</p>
       </div>
-      <button type="submit">Login</button>
+      <button id="submitButton" type="submit">Login</button>
     </form>
   </div>
   <script src="index.js"></script>

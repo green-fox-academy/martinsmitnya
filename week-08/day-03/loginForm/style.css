@@ -15,6 +15,7 @@ body {
   align-items: center;
   width: 30%;
   height:55%;
+  min-width: 340px;
   background-color:whitesmoke;
   padding: 10px;
   border-radius: 5px;
@@ -32,6 +33,15 @@ body {
   width: 100%;
   margin:10px 0px;
 }
+
+.inputs input:hover {
+  height: 24px;
+  width: 100%;
+  margin:10px 0px;
+  border: 2px green solid;
+  border-radius: 3px;
+}
+
 .inputs label {
   font-weight: bold;
   color: grey;
