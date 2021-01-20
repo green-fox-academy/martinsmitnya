@@ -30,11 +30,10 @@ app.post('/signup', (req, res) => {
       res.status(500).json({error: 'database error'});
       return
     } else {
-      console.log('Inserted!');
+      console.log('Inserted!' + username + ' and '+ email);
     }
   });
   
-  console.log(username, email);
 });
 
 
