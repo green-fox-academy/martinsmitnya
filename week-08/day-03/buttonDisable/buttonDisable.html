@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Disable</title>
+</head>
+
+<body>
+  <form>
+    <p>What is your favourite pet?</p>
+    <label for="dog"> Dog
+      <input type="radio" name="pets" id="dog">
+    </label>
+    <label for="cat"> Cat
+      <input type="radio" name="pets"id="cat">
+    </label>
+    <label for="victor"> Victor the Goldfish
+      <input type="radio" name="pets" id="victor">
+    </label>
+
+    <p>Do you want to sign up for Cat facts?</p>
+    <label> Yes
+      <input type="radio" name="answer" id = "yes">
+    </label>
+    <label> No
+      <input type="radio" name="answer" id = "no">
+    </label>
+
+    <button id="loveCatsButton" disabled>I love cats!</button>
+    <button id="singUpButton" disabled>Sign up</button>
+  </form>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
