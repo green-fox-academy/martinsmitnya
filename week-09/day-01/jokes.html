@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jokes site</title>
+</head>
+<body>
+  <div class="jokes">
+    <button id="jokeButton">Fetch me a joke! </button>
+  </div>
+
+<script>
+  let div = document.querySelector('.jokes');
+  let jokeButton = document.querySelector('#jokeButton')
+  let myParagraph = document.createElement('p');
+  
+
+  jokeButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    fetch('http://api.icndb.com/jokes/random')
+    .then( response => response.json() ) //JSON object created
+    .then( response => myParagraph.innerHTML= response.value.joke );
+
+    div.appendChild(myParagraph);
+  })
+
+
+
+</script>
+</body>
+</html>
