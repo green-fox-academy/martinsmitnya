@@ -3,7 +3,7 @@ let promise = new Promise( (fulfill, reject) => {
   fulfill('I FIRED')
   reject(new Error('I DID NOT FIRE') )
 })
-.then( console.log, onRejected)
+.then( (result)=> { console.log(result) }, onRejected)
 
 function onRejected(error) {
   console.log(error.message);
