@@ -5,11 +5,11 @@ app.get('/groot', (req, res) => {
   // TODO: implement this method
   let message = req.query.message;
   if (!message) {
-    res.json({
+    res.status(500).json({
       "error": "I am Groot!"
     })
   } else {
-    res.json({
+    res.status(200).json({
       "received": message,
       "translated": "I am Groot!"
     })
