@@ -1,5 +1,15 @@
-.container {
-  display: flex;
+@media screen and (max-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+}
+
+@media screen and (min-width: 600px) {
+  .container {
+    display: flex;
+  }
 }
 
 .green {
@@ -22,3 +32,4 @@
   height: 200px;
   flex-grow: 1;
 }
+
