@@ -1,0 +1,44 @@
+.wrapper {
+  width: 50%;
+  height: 50%;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  justify-items: center;
+  background-color: blueviolet;
+  padding: 100px;
+}
+
+.blue {
+  background: linear-gradient(blue, rgb(43, 43, 255));
+}
+
+.green {
+  background: linear-gradient(green, rgb(55, 122, 55));
+}
+
+.light {
+  background: linear-gradient(lightblue, rgb(203, 219, 224));
+}
+
+.black {
+  background: linear-gradient(rgb(112, 112, 112), rgb(39, 39, 39) );
+}
+
+.white {
+  background: linear-gradient(rgba(255, 255, 255), rgb(163, 163, 163) );
+}
+
+.red{
+  background: linear-gradient(red, rgb(255, 58, 58));
+}
+
+button {
+  border:none;
+  padding: 10% 30%;
+  border-radius: 5px;
+  box-shadow: inset 0px -5px 0px 0px rgba(0,0,0, 0.5);
+  margin: 20px 10px;
+  color: grey;
+  font-size: larger;
+
+}
